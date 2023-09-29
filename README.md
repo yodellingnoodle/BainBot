@@ -1,6 +1,8 @@
 # BainBot
 A simple multivariate analysis tool for clinicians.
 
+Requires MATLAB (made in ver. 2023b) and the statistics toolbox.
+
 This MATLAB script inputs a simple Excel spreadsheet and performs basic multivariate analysis, outputting a number of figures.
 Currently, these include:
 1. PCA
