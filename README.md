@@ -1,2 +1,2 @@
 # BainBot
-A simple multivariate analysis tool for clinicians
+A simple multivariate analysis tool for clinicians.
