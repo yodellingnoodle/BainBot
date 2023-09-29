@@ -10,6 +10,6 @@ Currently, these include:
 3. Scatter Plot Matrix
 
 The Excel spreadsheet assumes a single row for variable names with the first column exclusively reserved for patient MRNs (identifiers) and the last being your chosen output.
-Any number of variables and data points can be entered with no changes to the script.
+Any number of variables and data points can be entered with no changes to the script. 'diabetes' is an example input spreadsheet that was downloaded from Kaggle.
 
 Was originally made to help with basic data analysis for MRgFUS but can, in principle, be used for anything.
