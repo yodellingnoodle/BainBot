@@ -55,6 +55,7 @@ biplot(coefforth(:,1:2),'Scores',score(:,1:2),'Varlabels',Categories,'ObsLabels'
 xlabel('Component 1')
 ylabel('Component 2')
 title('Variables as vectors against first two principle components')
+%numPoints = size(score, 1);
 grid on
 hold off
 
@@ -92,12 +93,36 @@ title('Ranking and weighting of variables as predictors of outcome')
 
 figure %%%%% CORRECT AXES LABELS and PLOT color to black
 hold on
-gplotmatrix(Core_Data,[],[],[],[],[],false);
-text([.08 .24 .43 .66 .83], repmat(-.1,1,5), Categories, 'FontSize',8);
-text(repmat(-.12,1,5), [.86 .62 .41 .25 .02], Categories, 'FontSize',8, 'Rotation',90);
+numCategories = size(Categories,1);
+reversedCategories = flip(Categories);
+h = gplotmatrix(Core_Data,[],[],[],[],[],false);
+%ax = findobj(h, 'type', 'axes');
+%for i = 1:length(ax)
+%    if rem(i, numCategories) == 0
+%        xlabel(ax(i), Categories{numCategories});
+%    else
+%        xlabel(ax(i), '');
+%    end
+%    
+%    if i <= numCategories
+%        ylabel(ax(i), Categories{i});
+%    else
+%        ylabel(ax(i), '');
+%    end
+%end
+step = 1/(numCategories+1);
+points = linspace(step, 1-step, numCategories);
+text(points, repmat(-.1,1,numCategories), Categories, 'FontSize',8);
+text(repmat(-.12,1,numCategories), points, reversedCategories, 'FontSize',8, 'Rotation',90);
 title('Scatter plot matrix of all variable combinations')
 hold off
 
+%% Andrews Plot %%
+
+figure % Andrews Plot of all N observations % GRAPH
+hold on
+andrewsplot(Core_Data)
+title('Andrews Plot of all N observations')
+hold off
+
 %% K Means Cluster
-
-
